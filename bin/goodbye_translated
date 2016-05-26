@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'goodbye_translated'
+people = []
+ARGV.each do |a|
+  people << a
+end
+language = people.shift
+
+if language.nil?
+  language = "english"
+end
+if people == []
+  people = nil
+end
+
+puts GoodbyeTranslated.say_goodbye_to_in(people, language)
